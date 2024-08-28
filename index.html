@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookkeeping Services</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 10px 20px;
+        }
+
+        nav .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        nav .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        nav .nav-links li {
+            margin-left: 20px;
+        }
+
+        nav .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav .nav-links a:hover {
+            color: #ff6600;
+        }
+
+        nav .nav-links a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #ff6600;
+            transition: width 0.3s;
+        }
+
+        nav .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        /* Section with Shared Background */
+        section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            background: url('bg2.jpg') no-repeat center center/cover;
+            transition: transform 0.3s ease-in-out;
+            will-change: transform;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+        }
+
+        /* Section Content */
+        section h1, section h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        section p, section .service p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        section:hover h1, section:hover h2, section:hover p, section:hover .service p {
+            transform: translateY(-10px);
+        }
+
+        .cta-button {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .cta-button:hover {
+            background-color: #ff8533;
+            transform: translateY(-5px);
+        }
+
+        /* Services Section */
+        #services .service {
+            margin-bottom: 20px;
+        }
+
+        /* Testimonials Section */
+        #testimonials .testimonial {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #testimonials .testimonial:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        #testimonials .testimonial p {
+            font-size: 18px;
+            color: #fff;
+            font-style: italic;
+        }
+
+        /* Contact Section */
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact form input, 
+        #contact form textarea {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #contact form input[type="submit"] {
+            background-color: #ff6600;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            width: 50%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #contact form input[type="submit"]:hover {
+            background-color: #ff8533;
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s, transform 0.3s ease-in-out;
+        }
+
+        footer .social-icons a:hover {
+            color: #ff6600;
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Numerics</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Professional Bookkeeping Services</h1>
+        <p>Keep your finances in check with Numerics.</p>
+        <a href="#about" class="cta-button">Learn More</a>
+        <a href="#contact" class="cta-button">Contact Us</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Numerics</h2>
+        <p>Numerics is dedicated to helping small and medium-sized businesses manage their finances efficiently. With years of experience, our team ensures accuracy and reliability in all your bookkeeping needs.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service">
+            <h3>Monthly Bookkeeping</h3>
+            <p>We handle all your monthly bookkeeping tasks so you can focus on growing your business.</p>
+        </div>
+        <div class="service">
+            <h3>Financial Reporting</h3>
+            <p>Our comprehensive financial reports help you understand your financial position at a glance.</p>
+        </div>
+        <div class="service">
+            <h3>Tax Preparation</h3>
+            <p>We ensure that your taxes are prepared accurately and submitted on time, every time.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">
+            <p>"Numerics has been a game-changer for our business. Their attention to detail is unmatched!"</p>
+        </div>
+        <div class="testimonial">
+            <p>"Highly recommend Numerics. They made tax season stress-free and simple."</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us for any inquiries or to schedule a consultation.</p>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p>&copy; 2024 Numerics. All rights reserved. Made by Jay</p>
+    </footer>
+
+    <script>
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Parallax Effect
+        document.addEventListener('scroll', () => {
+            document.querySelectorAll('section').forEach((section) => {
+                let speed = section.getAttribute('data-speed');
+                if (speed) {
+                    section.style.backgroundPositionY = `${window.scrollY * speed}px`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
